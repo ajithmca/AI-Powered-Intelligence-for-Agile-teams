@@ -1,0 +1,51 @@
+# AI-Powered Intelligence for Agile Teams - Configuration File
+# This file contains all configuration settings for the sentiment analysis project.
+
+# ==============================================================================
+# DATA CONFIGURATION
+# ==============================================================================
+data:
+  # Path to the input data file (Excel or CSV format)
+  # Supported formats: .xlsx, .xls, .csv
+  # Path can be relative to the project root or absolute path
+  # Example relative path: "../data/GFG_FINAL-modified.xlsx"
+  # Example absolute path: "/path/to/your/data/file.xlsx"
+  file_path: "../data/GFG_FINAL-modified.xlsx"
+  
+  # Optional: Specify file type if auto-detection fails
+  # Options: "excel", "csv", "auto" (default: "auto" - detects from extension)
+  file_type: "auto"
+
+# ==============================================================================
+# LLM CONFIGURATION
+# ==============================================================================
+llm:
+  # LLM Provider/Library Selection
+  # Options:
+  #   - "openai" - For OpenAI GPT models (requires openai package)
+  #   - "anthropic" - For Anthropic Claude models (requires anthropic package)
+  #   - "langchain" - For LangChain integration (requires langchain package)
+  #   - "huggingface" - For Hugging Face models (requires transformers package)
+  #   - "none" - No LLM integration (sentiment analysis only)
+  provider: "none"
+  
+  # Model name (provider-specific)
+  # Examples:
+  #   OpenAI: "gpt-4", "gpt-3.5-turbo", "gpt-4-turbo-preview"
+  #   Anthropic: "claude-3-opus-20240229", "claude-3-sonnet-20240229", "claude-3-haiku-20240307"
+  #   HuggingFace: "meta-llama/Llama-2-7b-chat-hf", "mistralai/Mistral-7B-Instruct-v0.2"
+  model_name: ""
+  
+  # API Key Configuration
+  # Note: For security, consider using environment variables instead:
+  #   - OpenAI: OPENAI_API_KEY
+  #   - Anthropic: ANTHROPIC_API_KEY
+  #   - HuggingFace: HUGGINGFACE_API_KEY
+  api_key: ""  # Leave empty to use environment variables
+  
+  # Temperature setting for text generation (0.0 to 2.0)
+  # Lower values = more deterministic, Higher values = more creative
+  temperature: 0.7
+  
+  # Maximum tokens for generation
+  max_tokens: 1000
